@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  font-size: 10px;
+}
+body {
+  background-color: #17062a;
+  width: 100%;
+  height: 100vh;
+  padding: 3rem 2.4rem;
+  color: #ffe53d;
+  font-family: "League Spartan";
+  font-weight: 700;
+}
+.themeAndmonitor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  width: 100%;
+}
+.theme-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  font-size: 3.2rem;
+  letter-spacing: -0.533px;
+}
+h2 {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+.swith-container {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  gap: 2.6rem;
+}
+.swith-div {
+  width: 7.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.swith-numbers {
+  size: 1.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+/* make swith with input type = radio */
+.theme-swith {
+  width: 100%;
+  height: 2.6rem;
+  border-radius: 13px;
+  background: #1e0936;
+  display: flex;
+  justify-content: space-between;
+}
+.swith-radio,
+.swith-radio-dark {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.swith-radio input,
+.swith-radio-dark input {
+  display: none;
+}
+.swith-radio span,
+.swith-radio-dark span {
+  position: relative;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  margin: 0.3rem;
+}
+.swith-radio input:checked + span::after {
+  content: "";
+  position: absolute;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  background: #d03f2f;
+}
+/*radio style for dark theme */
+.swith-radio-dark input:checked + span::after {
+  content: "";
+  position: absolute;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  background: #00ded0;
+}
+/* start monitor style */
+.monitor {
+  width: 100%;
+  height: 8.8rem;
+  border-radius: 1rem;
+  background: #1e0936;
+  text-align: end;
+  font-size: 4rem;
+  padding: 2.4rem;
+}
+/* start keyboard styles */
+.keyboard-section {
+  width: 100%;
+  height: 42rem;
+  background: #1e0936;
+  border-radius: 1rem;
+  margin-top: 2.4rem;
+}
