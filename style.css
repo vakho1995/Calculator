@@ -1,3 +1,4 @@
+/* defoult styles */
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +10,32 @@
 html {
   font-size: 10px;
 }
+/* initial css variables for page theme */
+:root[data-theme="theme1"] {
+  --bg-body: #3a4663;
+  --bg-switch-and-keyboard: #242d44;
+  --bg-monitor: #181f33;
+  --text-color: #fff;
+}
+:root[data-theme="theme2"] {
+  --bg-body: #e6e6e6;
+  --bg-switch-and-keyboard: #d2cdcd;
+  --bg-monitor: #eee;
+  --text-color: #36362c;
+}
+:root[data-theme="theme3"] {
+  --bg-body: #17062a;
+  --bg-switch-and-keyboard: #1e0936;
+  --bg-monitor: #1e0936;
+  --text-color: #ffe53d;
+}
+/*  */
 body {
-  background-color: #e6e6e6;
+  background-color: var(--bg-body);
   width: 100%;
   height: 100vh;
   padding: 3rem 2.4rem;
-  color: #36362c;
+  color: var(--text-color);
   font-family: "League Spartan";
   font-weight: 700;
 }
@@ -62,7 +83,7 @@ h2 {
   width: 100%;
   height: 2.6rem;
   border-radius: 13px;
-  background: #d2cdcd;
+  background: var(--bg-switch-and-keyboard);
   display: flex;
   justify-content: space-between;
 }
@@ -106,7 +127,7 @@ h2 {
   width: 100%;
   height: 8.8rem;
   border-radius: 1rem;
-  background: #eee;
+  background: var(--bg-monitor);
   text-align: end;
   font-size: 4rem;
   padding: 2.4rem;
@@ -115,7 +136,7 @@ h2 {
 .keyboard-section {
   width: 100%;
   height: 42rem;
-  background: #d2cdcd;
+  background: var(--bg-switch-and-keyboard);
   border-radius: 1rem;
   margin-top: 2.4rem;
 }
