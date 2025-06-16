@@ -3,8 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-* {
   -webkit-tap-highlight-color: transparent;
 }
 html {
@@ -12,22 +10,43 @@ html {
 }
 /* initial css variables for page theme */
 :root[data-theme="theme1"] {
+  --text-color: #fff;
+  --button-color: #3a4663;
   --bg-body: #3a4663;
   --bg-switch-and-keyboard: #242d44;
   --bg-monitor: #181f33;
-  --text-color: #fff;
+  --button-bg: #eae3dc;
+  --del-reset-bg: #647198;
+  --equal-bg: #d03f2f;
+  --button-shadow: #b3a497;
+  --del-reset-shadow: #414e73;
+  --equal-shadow: #93261a;
 }
 :root[data-theme="theme2"] {
+  --text-color: #36362c;
+  --button-color: #36362c;
   --bg-body: #e6e6e6;
   --bg-switch-and-keyboard: #d2cdcd;
   --bg-monitor: #eee;
-  --text-color: #36362c;
+  --button-bg: #e5e4e1;
+  --del-reset-bg: #378187;
+  --equal-bg: #c85402;
+  --button-shadow: #a79e91;
+  --del-reset-shadow: #1b6066;
+  --equal-shadow: #873901;
 }
 :root[data-theme="theme3"] {
+  --text-color: #ffe53d;
+  --button-color: #ffe53d;
   --bg-body: #17062a;
   --bg-switch-and-keyboard: #1e0936;
   --bg-monitor: #1e0936;
-  --text-color: #ffe53d;
+  --button-bg: #331c4d;
+  --del-reset-bg: #56077c;
+  --equal-bg: #00ded0;
+  --button-shadow: #881c9e;
+  --del-reset-shadow: #be15f4;
+  --equal-shadow: #6cf9f1;
 }
 /*  */
 body {
@@ -139,4 +158,37 @@ h2 {
   background: var(--bg-switch-and-keyboard);
   border-radius: 1rem;
   margin-top: 2.4rem;
+  padding: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.3rem;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-bg);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--button-color);
+  cursor: pointer;
+}
+.del {
+  background-color: var(--del-reset-bg);
+  font-size: 2rem;
+  color: #fff;
+}
+.reset {
+  grid-column: span 2;
+  background-color: var(--del-reset-bg);
+  font-size: 2rem;
+  color: #fff;
+}
+.equal {
+  grid-column: span 2;
+  background-color: var(--equal-bg);
+  font-size: 2rem;
+  color: #111;
 }
