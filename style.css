@@ -15,9 +15,13 @@ html {
   --bg-body: #3a4663;
   --bg-switch-and-keyboard: #242d44;
   --bg-monitor: #181f33;
-  --button-bg: #eae3dc;
-  --del-reset-bg: #647198;
-  --equal-bg: #d03f2f;
+  --bg-button: #eae3dc;
+  --bg-del-reset: #647198;
+  --bg-equal: #d03f2f;
+  --bg-button-hover: #fffffe;
+  --bg-del-reset-hover: #a2b2e1;
+  --bg-equal-hover: #f96b5b;
+  --bg-swith-btn-hover: #f96b5b;
   --button-shadow: #b3a497;
   --del-reset-shadow: #414e73;
   --equal-shadow: #93261a;
@@ -28,9 +32,13 @@ html {
   --bg-body: #e6e6e6;
   --bg-switch-and-keyboard: #d2cdcd;
   --bg-monitor: #eee;
-  --button-bg: #e5e4e1;
-  --del-reset-bg: #378187;
-  --equal-bg: #c85402;
+  --bg-button: #e5e4e1;
+  --bg-del-reset: #378187;
+  --bg-equal: #c85402;
+  --bg-button-hover: #fff;
+  --bg-del-reset-hover: #62b5bc;
+  --bg-equal-hover: #ff8a38;
+  --bg-swith-btn-hover: #ff8a38;
   --button-shadow: #a79e91;
   --del-reset-shadow: #1b6066;
   --equal-shadow: #873901;
@@ -41,12 +49,16 @@ html {
   --bg-body: #17062a;
   --bg-switch-and-keyboard: #1e0936;
   --bg-monitor: #1e0936;
-  --button-bg: #331c4d;
-  --del-reset-bg: #56077c;
-  --equal-bg: #00ded0;
+  --bg-button: #331c4d;
+  --bg-del-reset: #56077c;
+  --bg-equal: #00ded0;
   --button-shadow: #881c9e;
   --del-reset-shadow: #be15f4;
   --equal-shadow: #6cf9f1;
+  --bg-button-hover: #6c34ac;
+  --bg-del-reset-hover: #8631af;
+  --bg-equal-hover: #93fff8;
+  --bg-swith-btn-hover: #93fff8;
 }
 /*  */
 body {
@@ -54,11 +66,18 @@ body {
   width: 100%;
   height: 100vh;
   padding: 3rem 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   color: var(--text-color);
   font-family: "League Spartan";
   font-weight: 700;
+  transition: 0.2s ease;
 }
 .themeAndmonitor-section {
+  width: 100%;
+  max-width: 53.3rem;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
@@ -154,6 +173,7 @@ h2 {
 /* start keyboard styles */
 .keyboard-section {
   width: 100%;
+  max-width: 53.3rem;
   height: 42rem;
   background: var(--bg-switch-and-keyboard);
   border-radius: 1rem;
@@ -164,10 +184,13 @@ h2 {
   gap: 1.3rem;
 }
 button {
+  max-width: 10rem;
+  height: 6.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--button-bg);
+  background-color: var(--bg-button);
+  box-shadow: 0px -4px 0px 0px var(--button-shadow) inset;
   border: none;
   border-radius: 0.5rem;
   font-size: 3.2rem;
@@ -176,19 +199,53 @@ button {
   cursor: pointer;
 }
 .del {
-  background-color: var(--del-reset-bg);
+  background-color: var(--bg-del-reset);
+  box-shadow: 0px -4px 0px 0px var(--del-reset-shadow) inset;
   font-size: 2rem;
   color: #fff;
+  transition: 0.2s;
 }
 .reset {
+  max-width: 22.7rem;
   grid-column: span 2;
-  background-color: var(--del-reset-bg);
+  background-color: var(--bg-del-reset);
+  box-shadow: 0px -4px 0px 0px var(--del-reset-shadow) inset;
   font-size: 2rem;
   color: #fff;
 }
 .equal {
+  max-width: 22.7rem;
   grid-column: span 2;
-  background-color: var(--equal-bg);
+  background-color: var(--bg-equal);
+  box-shadow: 0px -4px 0px 0px var(--equal-shadow) inset;
   font-size: 2rem;
   color: #111;
+}
+@media (min-width: 585px) {
+  .monitor {
+    height: 12.8rem;
+    font-size: 5.6rem;
+    padding: 4rem 3.2rem;
+  }
+  .keyboard-section {
+    height: 48rem;
+    padding: 3rem;
+    gap: 2.4rem;
+  }
+  .swith-radio input:checked + span::after:hover {
+    content: "";
+    background: var(--bg-swith-btn-hover);
+  }
+  button:hover {
+    background-color: var(--bg-button-hover);
+  }
+  .del:hover {
+    background-color: var(--bg-del-reset-hover);
+  }
+  .reset:hover {
+    background-color: var(--bg-del-reset-hover);
+  }
+  .equal:hover {
+    background-color: var(--bg-equal-hover);
+  }
 }
