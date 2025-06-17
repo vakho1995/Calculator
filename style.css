@@ -161,7 +161,7 @@ h2 {
   background: #00ded0;
 }
 /* start monitor style */
-.monitor {
+.display {
   width: 100%;
   height: 8.8rem;
   border-radius: 1rem;
@@ -222,7 +222,7 @@ button {
   color: #111;
 }
 @media (min-width: 585px) {
-  .monitor {
+  .display {
     height: 12.8rem;
     font-size: 5.6rem;
     padding: 4rem 3.2rem;
