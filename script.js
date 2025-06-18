@@ -83,11 +83,10 @@ numberBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (!isSecondNumber) {
       firstNumber += btn.innerText;
-      display.textContent = firstNumber;
+      displayFormat(firstNumber);
     } else {
       secondNumber += btn.innerText;
-
-      display.textContent = secondNumber;
+      displayFormat(secondNumber);
     }
   });
 });
@@ -95,11 +94,10 @@ numberBtns.forEach((btn) => {
 deleteBtn.addEventListener("click", () => {
   if (!isSecondNumber) {
     firstNumber = firstNumber.slice(0, -1);
-    display.textContent = firstNumber;
+    displayFormat(firstNumber);
   } else {
     secondNumber = secondNumber.slice(0, -1);
-
-    display.textContent = secondNumber;
+    displayFormat(secondNumber);
   }
 });
 
@@ -115,7 +113,7 @@ equal.addEventListener("click", () => {
     const x = Number(firstNumber);
     const y = Number(secondNumber);
     const result = operationObj[operator](x, y);
-    display.textContent = result.toFixed(6);
+    displayFormat(result);
     /// for chining
     firstNumber = result.toString();
     secondNumber = "";
@@ -123,7 +121,7 @@ equal.addEventListener("click", () => {
     isSecondNumber = false;
   }
 });
-
+// reset calculator.
 reset.addEventListener("click", () => {
   display.textContent = "";
   firstNumber = "";
@@ -131,3 +129,23 @@ reset.addEventListener("click", () => {
   operator = "";
   isSecondNumber = false;
 });
+// "The more digits the number has, the smaller the font size becomes."
+function displayFormat(input) {
+  const displayContent = input.toString();
+  if (displayContent.length < 10) {
+    display.style.fontSize = "40px";
+  } else {
+    switch (displayContent.length) {
+      case 10:
+        display.style.fontSize = "30px";
+        break;
+      case 15:
+        display.style.fontSize = "20px";
+        break;
+      case 20:
+        display.style.fontSize = "15px";
+        break;
+    }
+  }
+  display.textContent = displayContent;
+}
